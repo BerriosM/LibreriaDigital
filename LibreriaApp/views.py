@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-class Main(CreateView):
-    
+def main(request):
+    return render(request, 'LibreriaDigital/index.html')
