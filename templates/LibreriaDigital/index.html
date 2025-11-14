@@ -63,9 +63,9 @@
           </div>
           <button class="close"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <li><a href="{% url 'main' %}">Home</a></li>
-        <li><a href="">Service</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="{% url 'main' %}">Inicio</a></li>
+        <li><a href="">Pubicar Reseña</a></li>
+        <li><a href="">Perfil</a></li>
         <li><a href="">Books</a></li>
         <button class="login"><a href="">Log In</a></button>
         <button class="signup">
@@ -79,7 +79,6 @@
     </nav>
   </header>
 
-
   <section class="sale">
     <div class="book-container">
       <div class="book-contour">
@@ -88,7 +87,7 @@
             <a href=""><img src="{% static 'images/book-9.jpg' %}" alt="" /></a>
           </div>
           <h5>The Ruins Of Gorlan</h5>
-          <small>Thriller</small>
+          <small style="justify-content: left;">Thriller</small>
           <div class="price">
             <span>$54.6</span>
             <span><strike>$70.00</strike></span>
@@ -150,140 +149,6 @@
     </div>
   </section>
 
-  <section class="book-sale">
-    <div class="heading">
-      <h4>Books On Sale</h4>
-      <div class="arrowbtn">
-        <i id="left" class="fa-solid fa-angle-left"></i>
-        <i id="right" class="fa-solid fa-angle-right"></i>
-      </div>
-    </div>
-    <div class="book-container">
-      <div class="wrapper">
-        <ul class="carousel">
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-1.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>The Giver</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-2.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>The Wright ...</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-9.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>The Ruins Of...</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-10.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>Percy Jackson</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-5.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>To kill a...</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-6.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>Horry Potter</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="img">
-              <a href=""><img src="{% static 'images/book-7.jpg' %}" alt="" /></a>
-              <span class="badge">50%</span>
-            </div>
-            <h5>Heroes of ...</h5>
-            <div class="genre">
-              <span>adventure,</span><span>survival</span>
-            </div>
-            <div class="footer">
-              <span class="star"><i class="fa fa-star"></i> 4.7</span>
-              <div class="price">
-                <span>$45.4</span>
-                <span><strike>$90.4</strike></span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <section class="feature">
     <div class="main">
@@ -376,14 +241,14 @@
       </h4>
       <div class="input">
         <input type="text" placeholder="Type your email here" />
-        <button>subscribe</button>
+        <button>suscribirse</button>
       </div>
     </div>
     <div class="circle-1"></div>
     <div class="circle-2"></div>
   </section>
 
-  <footer>
+  <footer style="margin-bottom: 2rem;">
     <div class="container">
       <div class="logo-description">
         <div class="logo">

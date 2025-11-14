@@ -592,7 +592,7 @@
 }
 
 .book-sale {
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 
 .book-sale .heading {
@@ -1132,7 +1132,7 @@
   border-radius: 6px;
   text-transform: uppercase;
   font-weight: 600;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
