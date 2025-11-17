@@ -73,9 +73,6 @@ WSGI_APPLICATION = 'LibreriaDigital.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-import pymysql
-pymysql.install_as_MySQLdb()
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -126,6 +123,8 @@ STATICFILES_DIRS = [STATIC_URL]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = "/" #Ruta que llega el login
-LOGOUT_REDIRECT_URL = "/"
+# Configuracion de rutas de autenticacion
+
+LOGIN_REDIRECT_URL = "/" #Redirecciona al "/" cuando inicia sesion
+LOGOUT_REDIRECT_URL = "/" #Redirecciona "/" cuando se cierra sesion
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
