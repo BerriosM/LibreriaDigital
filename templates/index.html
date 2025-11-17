@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-    Inicio 🏠
+Inicio 🏠
 {% endblock %}
 
 {% block contenido %}
-    {%if user.is_authenticated %}
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
-        </form>
+{%if user.is_authenticated %}
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
+</form>
 
-    {% else %}
-    <a class="btn btn-outline-success" href="{% url 'login' %}"><button>Ingresar</button></a><br>
-    <a class="btn btn-outline-success" href=""><button>Registrarse</button></a>
-    {% endif %}
+{% else %}
+<li>
+    <a href="{% url 'login' %}"><button class="btn btn-light">Ingresar</button></a>
+</li><br>
+<li>
+    <a href=""><button class="btn btn-success">Registrarse</button></a>
+</li>
+{% endif %}
 {% endblock %}
