@@ -8,10 +8,11 @@
     {%if user.is_authenticated %}
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
-        <button class="btn btn-outline-danger" type="submit">Log out</button>
+        <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
         </form>
 
     {% else %}
-    <a class="btn btn-outline-success" href="{% url 'login' %}"><button>Log in</button></a>
+    <a class="btn btn-outline-success" href="{% url 'login' %}"><button>Ingresar</button></a><br>
+    <a class="btn btn-outline-success" href=""><button>Registrarse</button></a>
     {% endif %}
 {% endblock %}
