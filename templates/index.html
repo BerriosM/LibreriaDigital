@@ -6,15 +6,10 @@ Inicio 🏠
 
 {% block contenido %}
 {%if user.is_authenticated %}
-<li>
-    <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Perfil</a>
-</li>
-<li>
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
-    </form>
-</li>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
+</form>
 
 {% else %}
 <li>
