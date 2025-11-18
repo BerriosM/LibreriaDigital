@@ -4,19 +4,20 @@
 Inicio 🏠
 {% endblock %}
 
-{% block contenido %}
-{%if user.is_authenticated %}
-<form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
-</form>
-
-{% else %}
-<li>
-    <a href="{% url 'login' %}"><button class="btn btn-light">Ingresar</button></a>
-</li><br>
-<li>
-    <a href=""><button class="btn btn-success">Registrarse</button></a>
-</li>
-{% endif %}
+{% block nav_links %}
+  {% if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="">Perfil</a>
+    </li>
+    <li class="nav-item">
+      <form action="{% url 'logout' %}" method="post" class="d-inline">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
+      </form>
+    </li>
+  {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
+    </li>
+  {% endif %}
 {% endblock %}
