@@ -19,14 +19,14 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
           </li>
-          <li>
-            <a class="nav-link active" aria-current="page" href="#">Publicar Reseña</a>
-          </li>
           {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
+          <li>
+            <a class="nav-link active" aria-current="page" href="{% url 'review_create' %}">Publicar Reseña</a>
           </li>
-          <li class="nav-item">
+          <li>
+            <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Perfil</a>
+          </li>
+          <li>
             <form action="{% url 'logout' %}" method="post" class="d-inline">
               {% csrf_token %}
               <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
