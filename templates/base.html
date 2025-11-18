@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">NombreLibreria</a>
+      <a class="navbar-brand" href="{% url 'home' %}">NombreLibreria</a>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
@@ -22,7 +22,24 @@
           <li>
             <a class="nav-link active" aria-current="page" href="#">Publicar Reseña</a>
           </li>
-          {% block nav_links %}{% endblock %}
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <form action="{% url 'logout' %}" method="post" class="d-inline">
+              {% csrf_token %}
+              <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
+            </form>
+          </li>
+          {% else %}
+          <li class="mx-2">
+            <a href="{% url 'login' %}"><button class="btn btn-light">Ingresar</button></a>
+          </li><br>
+          <li>
+            <a href=""><button class="btn btn-success">Registrarse</button></a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -30,7 +47,7 @@
 
   <main class="container my-4">
     {% block contenido %}
-    <h1>hola mundo desde inicio</h1>
+    <h1>hola mundo desde Archivo Base</h1>
     {% endblock %}
   </main>
 

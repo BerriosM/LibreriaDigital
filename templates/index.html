@@ -1,23 +1,6 @@
 {% extends 'base.html' %}
 
-{% block titulo %}
-Inicio 🏠
+{% block titulo %} 
+    Inicio 🏠 
 {% endblock %}
 
-{% block nav_links %}
-  {% if user.is_authenticated %}
-    <li class="nav-item">
-      <a class="nav-link" href="">Perfil</a>
-    </li>
-    <li class="nav-item">
-      <form action="{% url 'logout' %}" method="post" class="d-inline">
-        {% csrf_token %}
-        <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
-      </form>
-    </li>
-  {% else %}
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
-    </li>
-  {% endif %}
-{% endblock %}
