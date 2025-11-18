@@ -11,7 +11,7 @@
 
 
 <body>
-  <nav class="navbar navbar-expand bg-primary">
+  <nav class="navbar navbar-expand bg-primary mb-4">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">NombreLibreria</a>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -45,11 +45,11 @@
     </div>
   </nav>
 
-  <main class="container my-4">
+  <div>
     {% block contenido %}
     <h1>hola mundo desde Archivo Base</h1>
     {% endblock %}
-  </main>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

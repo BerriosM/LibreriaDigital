@@ -3,10 +3,20 @@
 {% block titulo %}Mi Perfil{% endblock %}
 
 {% block contenido %}
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <h2>Perfil de {{ request.user.username }}</h2>
-      <p>Email: {{ request.user.email }}</p>
+<div class="row">
+  <div class="col-3">
+    <div class="container m-2">
+      <div class="form-control">
+        <p class="text-center">Maria Gonzales</p>
+        <p class="text-center">asifhndipñnfsadñilfnfñas
+          dnfñolsanfldsankñlfads</p>
+        <h4>Perfil de {{ request.user.username }}</h4>
+        <p>Email: {{ request.user.email }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="container mx-2">
 
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h3>Tus reseñas</h3>
@@ -14,18 +24,19 @@
       </div>
 
       {% if reviews %}
-        <div class="list-group">
-          {% for r in reviews %}
-            <div class="list-group-item">
-              <h5 class="mb-1">{{ r.book_title }} <small class="text-muted">({{ r.rating }}/5)</small></h5>
-              <p class="mb-1">{{ r.text|default:"(sin texto)" }}</p>
-              <small class="text-muted">Publicado: {{ r.created_at }}</small>
-            </div>
-          {% endfor %}
+      <div class="list-group">
+        {% for r in reviews %}
+        <div class="list-group-item">
+          <h5 class="mb-1">{{ r.book_title }} <small class="text-muted">({{ r.rating }}/5)</small></h5>
+          <p class="mb-1">{{ r.text|default:"(sin texto)" }}</p>
+          <small class="text-muted">Publicado: {{ r.created_at }}</small>
         </div>
+        {% endfor %}
+      </div>
       {% else %}
-        <p>No has publicado reseñas todavía.</p>
+      <p>No has publicado reseñas todavía.</p>
       {% endif %}
     </div>
   </div>
+</div>
 {% endblock %}
