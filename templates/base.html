@@ -9,53 +9,47 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
+
 <body>
-  <nav class="navbar navbar-expand bg-primary">
+  <nav class="navbar navbar-expand bg-primary mb-4">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">NombreLibreria</a>
+      <a class="navbar-brand" href="{% url 'home' %}">NombreLibreria</a>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li>
+            <a class="nav-link active" aria-current="page" href="{% url 'review_create' %}">Publicar Reseña</a>
           </li>
           <li>
-            <a class="nav-link active" aria-current="page" href="#">Publicar Reseña</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Perfil</a>
           </li>
           <li>
-            <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+            <form action="{% url 'logout' %}" method="post" class="d-inline">
+              {% csrf_token %}
+              <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
+            </form>
           </li>
+          {% else %}
+          <li class="mx-2">
+            <a href="{% url 'login' %}"><button class="btn btn-light">Ingresar</button></a>
+          </li><br>
           <li>
-            <a class="nav-link active" aria-current="page" href="#">Books</a>
+            <a href=""><button class="btn btn-success">Registrarse</button></a>
           </li>
-          {% block contenido %} {% endblock %}
-
-          <!-- ...existing code... -->
+          {% endif %}
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container m-5">
-    <form class="d-flex justify-content-start" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+
+  <div>
+    {% block contenido %}
+    <h1>hola mundo desde Archivo Base</h1>
+    {% endblock %}
   </div>
-
-  <div class="container py-5" style="background-color: gray;">
-    <div class="row d-flex align-items-start text-center text-light">
-      <h1>Bienvenido a la Libreria Digital</h1>
-      <p>Descubre miles de libros, comparte tus reseñas y conecta con otros amantes de la lectura</p>
-      <div>
-        <a class="btn btn-primary" href="#" role="button">Explorar Catalogo</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="container m-3">
-    <h3>Catalogo de libros</h3>
-  </div>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

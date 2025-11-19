@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Publicar reseña{% endblock %}
+
+{% block contenido %}
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>Publicar reseña</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="mb-3">
+          {{ form.book_title.label_tag }}
+          {{ form.book_title }}
+          {{ form.book_title.errors }}
+        </div>
+        <div class="mb-3">
+          {{ form.rating.label_tag }}
+          {{ form.rating }}
+          {{ form.rating.errors }}
+        </div>
+        <div class="mb-3">
+          {{ form.text.label_tag }}
+          {{ form.text }}
+          {{ form.text.errors }}
+        </div>
+        <button class="btn btn-primary" type="submit">Publicar</button>
+        <a class="btn btn-secondary" href="{% url 'profile' %}">Cancelar</a>
+      </form>
+    </div>
+  </div>
+{% endblock %}

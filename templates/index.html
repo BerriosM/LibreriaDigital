@@ -5,18 +5,30 @@ Inicio 🏠
 {% endblock %}
 
 {% block contenido %}
-{%if user.is_authenticated %}
-<form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
-</form>
+<div class="m-5">
+    <div class="row">
+        <div class="col-4">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">🔍</span>
+                <input type="text" class="form-control" placeholder="Buscar por titulo, autor o genero"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                <span class="input-group-text" id="basic-addon1">❌</span>
+            </div>
+        </div>
+    </div>
+</div>
 
-{% else %}
-<li>
-    <a href="{% url 'login' %}"><button class="btn btn-light">Ingresar</button></a>
-</li><br>
-<li>
-    <a href=""><button class="btn btn-success">Registrarse</button></a>
-</li>
-{% endif %}
+<div class="m-5 p-5" style="background-color: gray;">
+    <div class="row d-flex align-items-start text-center text-light">
+        <h1>Bienvenido a la Libreria Digital</h1>
+        <p>Descubre miles de libros, comparte tus reseñas y conecta con otros amantes de la lectura</p>
+        <div>
+            <a class="btn btn-primary" href="#" role="button">Explorar Catalogo</a>
+        </div>
+    </div>
+</div>
+
+<div class="container m-3">
+    <h3>Catalogo de libros</h3>
+</div>
 {% endblock %}
